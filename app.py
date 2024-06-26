@@ -28,7 +28,7 @@ def update_db(action, tup):
 @app.route("/", methods=["GET", "POST"])
 def index(): 
     num_from_db = search_db("SELECT * FROM num WHERE id = 1")
-    
+
     return render_template("index.html", num_from_db=num_from_db)
 
 
@@ -56,6 +56,7 @@ if __name__ == '__main__':
 # https://stackoverflow.com/questions/62075431/flask-post-request-form-data-without-refreshing-page 
 # https://stackoverflow.com/questions/55657789/sqlite-why-do-i-need-the-commit-command 
 # https://docs.python.org/2/library/sqlite3.html
+# https://stackoverflow.com/questions/62704869/python-flask-stop-page-from-re-submitting-a-post-request
 
 # KEY LESSON:
 # execute expects tuples. The reason excluding them in def index() worked is b/c
