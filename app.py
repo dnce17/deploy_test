@@ -54,6 +54,7 @@ if __name__ == '__main__':
 
 
 # Credits (helped me solve big issues)
+# https://flask-socketio.readthedocs.io/en/latest/deployment.html#gunicorn-web-server
 # https://stackoverflow.com/questions/62075431/flask-post-request-form-data-without-refreshing-page 
 # https://stackoverflow.com/questions/55657789/sqlite-why-do-i-need-the-commit-command 
 # https://docs.python.org/2/library/sqlite3.html
@@ -66,3 +67,6 @@ if __name__ == '__main__':
     # adding commit() explicitly is needed 
     # ISSUE FACED BEFORE (now solved by using commit): 
         # db updated when btn pressed on the page, but reseted upon refresh
+# gevent-websocket did not work when I deployed it on render, but it works fine locally
+    # the fix: make sure the python version that render is using is compatible. Render used 3.11, but 
+    # the gevent you installed works only on 3.8 and later
