@@ -3,7 +3,8 @@ from flask_socketio import SocketIO, emit
 import sqlite3
 
 app = Flask(__name__)
-socketio = SocketIO(app)
+app.config["SECRET_KEY"] = "kj12h3jhwfikhkkjHFAJKHddsj"
+socketio = SocketIO(app, async_mode="gevent")
 
 def search_db(action):
     connect = sqlite3.connect("number.db")
