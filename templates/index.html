@@ -5,13 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Number in Database</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Change Number In Database</h1>
-    <p>Number from Database: {{ num_from_db }}</p>
-    <form action="/" method="post">
+    <h1>Change Number In Database Directly And flask-socketio</h1>
+    <p>Number from Database: <span class="db-num">{{ num_from_db }}</span></p>
+    <form action="/submit" method="post">
+        <h2>directly</h2>
         <input name="number" type="number" placeholder="Number" class="number-input">
         <button class="btn" type="submit">Change to This Number</button>
     </form>
+
+    <div class="socket-test">
+        <h2>flask-socketio</h2>
+        <input name="number" type="number" placeholder="Number" class="flask-input">
+        <button class="socket-btn">Change to This Number</button>
+    </div>
+    <script src="/static/index.js"></script>
 </body>
 </html>
