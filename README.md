@@ -15,6 +15,7 @@
 * NOTE: .execute(...) expects tuples when plugging in for ?
     * Did not need to use tuples in Flask, but that's likely b/c Flask is forgiving and processes it for you
     * Be sure to use tuples from now on in execute()
+    * CAUTION: if you have only one element in a tuple, you need a common to make it a tuple --> WRONG: ("some_item")   CORRECT: ("some_item",)
 
 REMINDER: sometimes it's best to create a test project to learn certain concepts rather than trying it on an actual project. That way, you can focus solely on the concept rather than trying to change other codes to fit the concept you're suppose to be learning. 
 
